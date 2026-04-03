@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Braveglobaltech | Futuristic Interface</title>
-  <!-- Font Awesome 6 (free icons) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Braveglobaltech | Futuristic Tech Ecosystem</title>
+  <!-- Font Awesome 6 (Free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts: Inter & Space Grotesk for futuristic vibe -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Inter + Space Grotesk (Futuristic) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -15,46 +15,42 @@
       box-sizing: border-box;
     }
 
-    /* GLOBAL SMOOTH SCROLL BEHAVIOR */
     html {
       scroll-behavior: smooth;
     }
 
-    /* ========= GLOBAL VARIABLES - BRAVEGLOBALTHEME ========= */
     :root {
-      --bg-deep: #1b1813;      /* primary dark brown-black background */
-      --accent-cyan: #00e0ff;   /* futuristic electric cyan */
-      --accent-glow: rgba(0, 224, 255, 0.6);
+      --bg-deep: #1b1813;
+      --accent-cyan: #00f2ff;
+      --accent-purple: #8a2be2;
       --glass-border: rgba(255, 255, 255, 0.08);
-      --text-primary: #f0f0f0;
-      --text-dim: rgba(255, 255, 255, 0.65);
-      --nav-width: 80px;
-      --nav-width-open: 280px;
-      --transition-smooth: 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      --text-primary: #f5f5f5;
+      --text-dim: rgba(255, 255, 255, 0.7);
+      --nav-width: 72px;
+      --nav-width-open: 260px;
+      --transition: 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     }
 
     body {
       font-family: 'Inter', 'Space Grotesk', sans-serif;
       background-color: var(--bg-deep);
       min-height: 100vh;
-      position: relative;
       overflow-x: hidden;
     }
 
-    /* ========= MIDDLE-IMAGE HERO LAYER (background image in center, solid top & bottom) ========= */
-    .hero-backdrop {
+    /* === MIDDLE IMAGE BACKGROUND (color covers top & bottom) === */
+    .visual-backdrop {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       z-index: 0;
-      pointer-events: none;  /* allows interaction with sidebar and content */
+      pointer-events: none;
     }
 
-    /* solid blocks top and bottom (covers image edges) - creates "color covers top and bottom, picture in middle" */
-    .hero-backdrop::before,
-    .hero-backdrop::after {
+    .visual-backdrop::before,
+    .visual-backdrop::after {
       content: '';
       position: absolute;
       left: 0;
@@ -63,181 +59,184 @@
       z-index: 2;
     }
 
-    .hero-backdrop::before {
+    .visual-backdrop::before {
       top: 0;
-      height: 22%;
-      background: linear-gradient(to bottom, #1b1813 0%, #1b1813 60%, rgba(27,24,19,0.85) 100%);
+      height: 20%;
+      background: linear-gradient(to bottom, #1b1813 0%, #1b1813 60%, rgba(27,24,19,0.8) 100%);
     }
 
-    .hero-backdrop::after {
+    .visual-backdrop::after {
       bottom: 0;
-      height: 22%;
-      background: linear-gradient(to top, #1b1813 0%, #1b1813 60%, rgba(27,24,19,0.85) 100%);
+      height: 20%;
+      background: linear-gradient(to top, #1b1813 0%, #1b1813 60%, rgba(27,24,19,0.8) 100%);
     }
 
-    /* central image area - futuristic abstract / tech image */
     .center-image {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 72%;
-      max-width: 1150px;
-      height: auto;
-      min-height: 56%;
-      background-image: url('https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      width: 70%;
+      max-width: 1100px;
+      height: 60%;
+      background-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1600');
       background-size: cover;
-      background-position: center 30%;
+      background-position: center 20%;
       border-radius: 48px;
-      box-shadow: 0 25px 45px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,224,255,0.25);
+      box-shadow: 0 25px 45px rgba(0,0,0,0.7), 0 0 0 1px rgba(0,242,255,0.25);
       z-index: 1;
-      opacity: 0.88;
-      transition: all 0.3s ease;
+      opacity: 0.9;
     }
 
-    /* futuristic overlay glow on image */
     .center-image::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 30% 20%, rgba(0,224,255,0.12), transparent 75%);
+      inset: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(0,242,255,0.1), transparent 70%);
       border-radius: 48px;
-      pointer-events: none;
     }
 
-    /* ========= SIDEBAR NAVIGATION (premium style from reference, enhanced) ========= */
+    /* === SIDEBAR (compact on mobile, no shifting) === */
     .navigation {
       position: fixed;
-      top: 20px;
-      left: 20px;
-      bottom: 20px;
+      top: 16px;
+      left: 16px;
+      bottom: 16px;
       width: var(--nav-width);
-      background: rgba(27, 24, 19, 0.75);
-      backdrop-filter: blur(16px);
-      border-radius: 36px;
-      border: 1px solid rgba(0, 224, 255, 0.25);
-      transition: var(--transition-smooth);
+      background: rgba(27, 24, 19, 0.85);
+      backdrop-filter: blur(18px);
+      border-radius: 32px;
+      border: 1px solid rgba(0, 242, 255, 0.3);
+      transition: var(--transition);
       display: flex;
       flex-direction: column;
       padding: 16px 0;
       overflow: hidden;
-      z-index: 100;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      z-index: 200;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
     .navigation:hover {
       width: var(--nav-width-open);
-      box-shadow: 20px 0 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0,224,255,0.4);
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(24px);
+      border-color: rgba(0, 242, 255, 0.6);
     }
 
-    /* Menu Items */
+    /* On mobile, keep sidebar always slightly smaller but still functional */
+    @media (max-width: 768px) {
+      .navigation {
+        top: 12px;
+        left: 12px;
+        bottom: 12px;
+        width: 60px;
+      }
+      .navigation:hover {
+        width: 240px;
+      }
+      .icon {
+        min-width: 48px !important;
+      }
+      .main-content {
+        margin-left: 80px !important;
+        padding: 1.2rem !important;
+      }
+    }
+
     .navigation ul {
       width: 100%;
       padding: 0;
-      margin: 0;
     }
 
     .navigation ul li {
       list-style: none;
-      position: relative;
       width: 100%;
-      height: 64px;
-      padding: 0 12px;
+      height: 58px;
+      padding: 0 10px;
       margin: 4px 0;
     }
 
     .navigation ul li a {
-      position: relative;
       display: flex;
       align-items: center;
-      width: 100%;
-      height: 100%;
       text-decoration: none;
-      color: rgba(255, 255, 255, 0.65);
-      border-radius: 24px;
-      transition: 0.25s ease;
+      color: var(--text-dim);
+      border-radius: 20px;
+      transition: 0.2s;
       cursor: pointer;
+      height: 100%;
+      width: 100%;
     }
 
-    /* The Indicator Notch / futuristic glow */
     .navigation ul li:hover a {
       color: var(--accent-cyan);
-      background: rgba(0, 224, 255, 0.12);
-      text-shadow: 0 0 5px rgba(0,224,255,0.5);
+      background: rgba(0, 242, 255, 0.12);
+      text-shadow: 0 0 6px rgba(0,242,255,0.4);
     }
 
-    /* Left neon indicator */
     .navigation ul li a::before {
       content: '';
       position: absolute;
-      left: -8px;
-      width: 4px;
+      left: -5px;
+      width: 3px;
       height: 0;
       background: var(--accent-cyan);
       border-radius: 4px;
-      box-shadow: 0 0 12px var(--accent-cyan);
-      transition: 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 0 10px var(--accent-cyan);
+      transition: 0.25s;
     }
 
     .navigation ul li:hover a::before {
-      height: 28px;
+      height: 24px;
     }
 
     .icon {
-      min-width: 56px;
-      height: 56px;
+      min-width: 52px;
+      height: 52px;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
 
     .title {
       padding-left: 12px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 500;
-      letter-spacing: 0.3px;
       opacity: 0;
-      transition: var(--transition-smooth);
+      transition: var(--transition);
       white-space: nowrap;
-      font-family: 'Space Grotesk', monospace;
+      letter-spacing: 0.3px;
     }
 
     .navigation:hover .title {
       opacity: 1;
     }
 
-    /* Bottom Profile / Brand Block in sidebar */
     .user-box {
       margin-top: auto;
-      padding: 20px 18px;
+      padding: 18px;
       display: flex;
       align-items: center;
-      border-top: 1px solid rgba(0, 224, 255, 0.2);
+      border-top: 1px solid rgba(0, 242, 255, 0.2);
     }
 
     .user-img {
-      min-width: 44px;
-      height: 44px;
-      background: linear-gradient(135deg, #00e0ff, #3a0ca3);
+      min-width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #00f2ff, #6a0dad);
       border-radius: 14px;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: white;
       font-weight: bold;
-      font-size: 1.2rem;
-      box-shadow: 0 0 10px rgba(0,224,255,0.3);
+      font-size: 1rem;
+      color: white;
     }
 
     .user-details {
       margin-left: 14px;
       opacity: 0;
-      transition: var(--transition-smooth);
+      transition: var(--transition);
       white-space: nowrap;
     }
 
@@ -246,403 +245,414 @@
     }
 
     .user-details p {
-      font-size: 0.9rem;
-      color: #fff;
+      font-size: 0.85rem;
       font-weight: 600;
-      letter-spacing: 0.5px;
+      color: white;
     }
 
     .user-details span {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: var(--accent-cyan);
-      font-weight: 400;
     }
 
-    /* ========= MAIN CONTENT AREA (smooth scroll sections) ========= */
+    /* === MAIN CONTENT (no shift issues) === */
     .main-content {
       position: relative;
       z-index: 10;
-      margin-left: 100px;
-      min-height: 100vh;
-      transition: margin-left var(--transition-smooth);
-      padding: 2rem 2.5rem 4rem 2.5rem;
-      backdrop-filter: blur(1px);
+      margin-left: 90px;
+      transition: margin-left 0.2s ease;
+      padding: 2rem 2.5rem 4rem;
     }
 
-    /* adjust margin when sidebar expands via hover (JS enhanced) */
-    body.sidebar-expanded .main-content {
-      margin-left: 300px;
+    @media (max-width: 768px) {
+      .main-content {
+        margin-left: 78px;
+      }
     }
 
-    /* Section styling for smooth scroll targets */
+    /* Sections */
     .section {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      scroll-margin-top: 30px;
+      scroll-margin-top: 20px;
       padding: 2rem 0;
-      border-bottom: 1px solid rgba(0,224,255,0.1);
+      border-bottom: 1px solid rgba(0, 242, 255, 0.1);
     }
 
-    .section:last-child {
-      border-bottom: none;
-    }
-
-    /* Braveglobaltech blocks (brand blocks) */
-    .brand-block {
-      display: inline-block;
-      background: rgba(0, 0, 0, 0.55);
-      backdrop-filter: blur(12px);
-      padding: 0.85rem 2.2rem;
-      border-radius: 60px;
-      border-left: 4px solid var(--accent-cyan);
-      margin-bottom: 1.8rem;
-      width: fit-content;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .brand-name-block {
-      font-size: 2.7rem;
-      font-weight: 800;
-      letter-spacing: 3px;
-      font-family: 'Space Grotesk', monospace;
-      background: linear-gradient(135deg, #FFFFFF 20%, var(--accent-cyan) 85%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-transform: uppercase;
-      word-break: keep-all;
-    }
-
-    /* blocks styling for "Braveglobaltech" split into blocks effect */
-    .brand-blocks-container {
+    .brand-blocks {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 1.5rem;
+      gap: 14px;
+      margin-bottom: 2rem;
     }
 
-    .brand-letter-block {
-      background: rgba(0, 224, 255, 0.08);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(0, 224, 255, 0.3);
-      padding: 12px 18px;
-      border-radius: 20px;
-      font-weight: 700;
-      font-size: 1.7rem;
+    .brand-block-item {
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 242, 255, 0.3);
+      padding: 12px 24px;
+      border-radius: 40px;
+      font-size: 1.6rem;
+      font-weight: 800;
       font-family: 'Space Grotesk', monospace;
-      color: #fff;
-      transition: all 0.2s;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      transition: 0.2s;
     }
 
-    .brand-letter-block span {
-      background: linear-gradient(135deg, #fff, #00e0ff);
+    .brand-block-item span {
+      background: linear-gradient(135deg, #ffffff, #00f2ff);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
     .brand-sub {
-      font-size: 0.8rem;
-      letter-spacing: 5px;
       color: var(--accent-cyan);
-      font-weight: 300;
+      letter-spacing: 3px;
+      font-size: 0.75rem;
       margin-top: 10px;
       display: block;
     }
 
-    .hero-tagline {
-      max-width: 600px;
-      background: rgba(27, 24, 19, 0.7);
+    .hero-card {
+      background: rgba(27, 24, 19, 0.65);
       backdrop-filter: blur(14px);
-      border-radius: 32px;
-      padding: 1.8rem 2.2rem;
-      border: 1px solid rgba(0, 224, 255, 0.3);
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6);
-      margin: 2rem 0;
+      border-radius: 36px;
+      padding: 2rem 2.2rem;
+      border: 1px solid rgba(0, 242, 255, 0.3);
+      max-width: 650px;
+      box-shadow: 0 20px 35px -12px black;
     }
 
-    .hero-tagline h1 {
-      font-size: 3.2rem;
+    .hero-card h1 {
+      font-size: 3rem;
       font-weight: 800;
-      background: linear-gradient(to right, #fff, #b0f0ff);
+      background: linear-gradient(to right, #fff, #9effff);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      line-height: 1.2;
     }
 
-    .hero-tagline p {
+    .hero-card p {
       color: var(--text-dim);
-      margin: 1rem 0 1.5rem;
-      font-size: 1.1rem;
+      margin: 1rem 0 1.8rem;
       line-height: 1.5;
     }
 
-    .futuristic-btn {
+    .btn-cyber {
       background: transparent;
       border: 1.5px solid var(--accent-cyan);
-      padding: 0.75rem 1.8rem;
+      padding: 0.7rem 1.8rem;
       border-radius: 40px;
       color: var(--accent-cyan);
       font-weight: 600;
+      transition: 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       cursor: pointer;
-      transition: all 0.25s;
-      font-family: inherit;
-      backdrop-filter: blur(4px);
-      display: inline-block;
       text-decoration: none;
     }
 
-    .futuristic-btn:hover {
+    .btn-cyber:hover {
       background: var(--accent-cyan);
       color: #1b1813;
       box-shadow: 0 0 14px var(--accent-cyan);
-      transform: scale(1.02);
     }
 
-    /* card style for sections */
-    .feature-grid {
+    .grid-cards {
       display: flex;
-      gap: 2rem;
       flex-wrap: wrap;
+      gap: 2rem;
       margin-top: 2rem;
     }
-    .feature-card {
-      background: rgba(27, 24, 19, 0.6);
-      backdrop-filter: blur(10px);
+
+    .tech-card {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
       border-radius: 28px;
-      padding: 1.5rem;
-      width: 260px;
-      border: 1px solid rgba(0,224,255,0.2);
+      padding: 1.8rem;
+      width: 280px;
+      border: 1px solid rgba(0, 242, 255, 0.2);
       transition: all 0.3s;
     }
-    .feature-card i {
-      font-size: 2rem;
+
+    .tech-card i {
+      font-size: 2.2rem;
       color: var(--accent-cyan);
       margin-bottom: 1rem;
     }
-    .feature-card h3 {
+
+    .tech-card h3 {
       color: white;
-      margin-bottom: 0.5rem;
-    }
-    .feature-card p {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.85rem;
-    }
-    .feature-card:hover {
-      border-color: var(--accent-cyan);
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px -12px black;
+      margin-bottom: 0.6rem;
+      font-size: 1.3rem;
     }
 
-    /* Responsive */
-    @media (max-width: 850px) {
-      .center-image {
-        width: 90%;
-        min-height: 40%;
-      }
-      .hero-tagline h1 {
+    .tech-card p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+    }
+
+    .tech-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-6px);
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .contact-badge {
+      background: rgba(0, 242, 255, 0.1);
+      border-radius: 60px;
+      padding: 0.8rem 1.5rem;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(0,242,255,0.3);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      color: white;
+    }
+
+    .contact-badge i {
+      font-size: 1.3rem;
+      color: var(--accent-cyan);
+    }
+
+    .contact-badge a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-badge a:hover {
+      color: var(--accent-cyan);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 650px) {
+      .hero-card h1 {
         font-size: 2rem;
       }
-      .main-content {
-        padding: 1.5rem;
-        margin-left: 90px;
+      .tech-card {
+        width: 100%;
       }
-      .brand-name-block {
-        font-size: 1.8rem;
-      }
-      .brand-letter-block {
+      .brand-block-item {
         font-size: 1.2rem;
-        padding: 8px 12px;
+        padding: 8px 16px;
       }
-    }
-
-    /* additional smooth scroll and highlight */
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #1b1813;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--accent-cyan);
-      border-radius: 10px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Background image layer: top & bottom covered by #1b1813, image in middle -->
-  <div class="hero-backdrop">
+  <!-- Background with middle image effect -->
+  <div class="visual-backdrop">
     <div class="center-image"></div>
   </div>
 
-  <!-- SIDEBAR NAVIGATION (based on reference, with updated brand & style) -->
-  <nav class="navigation" id="sideNav">
+  <!-- SIDEBAR NAVIGATION - Compact, futuristic, no layout shift -->
+  <nav class="navigation">
     <ul>
-      <li><a href="#home" class="nav-link"><span class="icon"><i class="fa-solid fa-house"></i></span><span class="title">Home</span></a></li>
-      <li><a href="#dashboard" class="nav-link"><span class="icon"><i class="fa-solid fa-chart-pie"></i></span><span class="title">Dashboard</span></a></li>
-      <li><a href="#projects" class="nav-link"><span class="icon"><i class="fa-solid fa-layer-group"></i></span><span class="title">Projects</span></a></li>
-      <li><a href="#portfolio" class="nav-link"><span class="icon"><i class="fa-solid fa-wallet"></i></span><span class="title">Portfolio</span></a></li>
-      <li><a href="#insights" class="nav-link"><span class="icon"><i class="fa-solid fa-microchip"></i></span><span class="title">Insights</span></a></li>
-      <li><a href="#contact" class="nav-link"><span class="icon"><i class="fa-solid fa-gear"></i></span><span class="title">Settings</span></a></li>
+      <li><a href="#home" class="nav-smooth"><span class="icon"><i class="fa-solid fa-globe"></i></span><span class="title">Home</span></a></li>
+      <li><a href="#solutions" class="nav-smooth"><span class="icon"><i class="fa-solid fa-microchip"></i></span><span class="title">Solutions</span></a></li>
+      <li><a href="#innovation" class="nav-smooth"><span class="icon"><i class="fa-solid fa-brain"></i></span><span class="title">Innovation</span></a></li>
+      <li><a href="#portfolio" class="nav-smooth"><span class="icon"><i class="fa-solid fa-cubes"></i></span><span class="title">Portfolio</span></a></li>
+      <li><a href="#contact" class="nav-smooth"><span class="icon"><i class="fa-solid fa-headset"></i></span><span class="title">Contact</span></a></li>
     </ul>
-
     <div class="user-box">
       <div class="user-img">BG</div>
       <div class="user-details">
         <p>Braveglobaltech</p>
-        <span>Next-gen solutions</span>
+        <span>Next-Gen Nexus</span>
       </div>
     </div>
   </nav>
 
-  <!-- MAIN CONTENT with SMOOTH SCROLL sections -->
   <main class="main-content">
-    <!-- Home section with BRAVEGLOBALTECH in blocks & professional look -->
+    <!-- HOME Section -->
     <section id="home" class="section">
-      <div class="brand-block">
-        <div class="brand-blocks-container">
-          <div class="brand-letter-block"><span>BRAVE</span></div>
-          <div class="brand-letter-block"><span>GLOBAL</span></div>
-          <div class="brand-letter-block"><span>TECH</span></div>
+      <div class="brand-blocks">
+        <div class="brand-block-item"><span>BRAVE</span></div>
+        <div class="brand-block-item"><span>GLOBAL</span></div>
+        <div class="brand-block-item"><span>TECH</span></div>
+      </div>
+      <div class="hero-card">
+        <h1>Beyond Boundaries</h1>
+        <p>Braveglobaltech architects the future — AI-driven ecosystems, immersive web3 infrastructure, and zero‑latency cloud solutions. We don't just innovate; we redefine dimensions.</p>
+        <a href="#solutions" class="btn-cyber nav-smooth">Explore Universe <i class="fa-regular fa-star"></i></a>
+      </div>
+    </section>
+
+    <!-- SOLUTIONS Section (bulky, relevant) -->
+    <section id="solutions" class="section">
+      <div class="brand-blocks" style="margin-bottom: 1rem;">
+        <div class="brand-block-item" style="background: rgba(0,242,255,0.1);"><span>✦ Core Solutions</span></div>
+      </div>
+      <div class="grid-cards">
+        <div class="tech-card">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <h3>Neural Cloud Fabric</h3>
+          <p>Serverless, edge-optimized infrastructure with 99.999% uptime. Global scaling & real-time analytics.</p>
         </div>
-        <span class="brand-sub">✦ INNOVATION UNBOUND ✦</span>
-      </div>
-      
-      <div class="hero-tagline">
-        <h1>Unmatched Experience</h1>
-        <p>Fusing artificial intelligence, immersive design, and futuristic architecture — Braveglobaltech redefines digital frontiers. Scroll to explore our ecosystem.</p>
-        <a href="#dashboard" class="futuristic-btn nav-link">Launch Interface <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </section>
-
-    <!-- Dashboard section -->
-    <section id="dashboard" class="section">
-      <div class="brand-block" style="background: rgba(0,0,0,0.5);">
-        <span style="color: #00e0ff; font-weight:500;"><i class="fa-solid fa-chart-line"></i> Real-time intelligence</span>
-        <h2 style="color: white; margin-top: 8px; font-size: 2rem;">Analytics Core</h2>
-      </div>
-      <div class="feature-grid">
-        <div class="feature-card"><i class="fa-solid fa-chart-simple"></i><h3>Performance</h3><p>Live metrics with AI forecasting and anomaly detection.</p></div>
-        <div class="feature-card"><i class="fa-solid fa-cloud-arrow-up"></i><h3>Edge Compute</h3><p>Decentralized architecture for global speed.</p></div>
-        <div class="feature-card"><i class="fa-solid fa-shield-haltered"></i><h3>Quantum Safe</h3><p>Military-grade encryption & next-gen security.</p></div>
+        <div class="tech-card">
+          <i class="fa-solid fa-shield-haltered"></i>
+          <h3>Quantum Vault</h3>
+          <p>Post-quantum cryptography & decentralized identity management. Military-grade protection.</p>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Cognitive AI Suite</h3>
+          <p>Autonomous agents, predictive modeling, and generative engines tailored for enterprises.</p>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-vr-cardboard"></i>
+          <h3>MetaHaptic Engine</h3>
+          <p>Immersive AR/VR interfaces with haptic feedback & spatial computing integration.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-      <div class="brand-block">
-        <h2 style="color:white; font-size: 1.8rem;"><i class="fa-solid fa-cubes"></i> Flagship Initiatives</h2>
+    <!-- INNOVATION LABS (Rich Content) -->
+    <section id="innovation" class="section">
+      <div class="brand-blocks">
+        <div class="brand-block-item"><span>⚡ Innovation Labs</span></div>
       </div>
-      <div class="feature-grid">
-        <div class="feature-card"><i class="fa-solid fa-brain"></i><h3>Neural Core</h3><p>Autonomous decision systems for enterprise.</p></div>
-        <div class="feature-card"><i class="fa-solid fa-vr-cardboard"></i><h3>Meta Fusion</h3><p>Immersive AR/VR environments with real-time data.</p></div>
-        <div class="feature-card"><i class="fa-solid fa-microchip"></i><h3>Silicon Pulse</h3><p>Custom hardware acceleration for AI workloads.</p></div>
+      <div class="grid-cards">
+        <div class="tech-card">
+          <i class="fa-solid fa-microchip"></i>
+          <h3>Silicon Genesis</h3>
+          <p>Custom ASIC design for AI workloads, delivering 10x efficiency gains.</p>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-brain"></i>
+          <h3>NeuroSync Interface</h3>
+          <p>Brain-computer integration research for next-gen human-AI collaboration.</p>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-dna"></i>
+          <h3>Generative Evolution</h3>
+          <p>Multimodal generative models creating real-time synthetic environments.</p>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-satellite-dish"></i>
+          <h3>Orbital Edge</h3>
+          <p>Satellite mesh network for ultra-low latency global connectivity.</p>
+        </div>
+      </div>
+      <div style="margin-top: 2rem;">
+        <p style="color: rgba(255,255,255,0.7); max-width: 700px;">Our R&D centers in 4 continents push the frontier of quantum machine learning, autonomous swarms, and regenerative digital twins.</p>
       </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- PORTFOLIO / CASE STUDIES -->
     <section id="portfolio" class="section">
-      <div class="brand-block">
-        <h2 style="color:white; font-size: 1.8rem;"><i class="fa-solid fa-bezier-curve"></i> Digital Masterpieces</h2>
+      <div class="brand-blocks">
+        <div class="brand-block-item"><span>🏆 Trusted by pioneers</span></div>
       </div>
-      <div class="feature-grid">
-        <div class="feature-card"><i class="fa-solid fa-globe"></i><h3>Web3 Ecosystems</h3><p>Decentralized platforms & blockchain synergy.</p></div>
-        <div class="feature-card"><i class="fa-solid fa-chalkboard-user"></i><h3>Immersive UI/UX</h3><p>Futuristic dashboards with fluid interactions.</p></div>
-        <div class="feature-card"><i class="fa-solid fa-robot"></i><h3>Autonomous Agents</h3><p>AI-driven automation for next-gen workflows.</p></div>
+      <div class="grid-cards">
+        <div class="tech-card">
+          <i class="fa-regular fa-building"></i>
+          <h3>Aetherion Industries</h3>
+          <p>Deployed AI-driven supply chain mesh, reducing latency by 42% across 12 warehouses.</p>
+        </div>
+        <div class="tech-card">
+          <i class="fa-regular fa-gem"></i>
+          <h3>Nexus Bank</h3>
+          <p>Quantum-secure digital asset platform processing $2B+ monthly.</p>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-gamepad"></i>
+          <h3>Phantom Interactive</h3>
+          <p>Immersive metaverse engine with real-time ray tracing & 10M concurrent users.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Insights & Contact blend -->
-    <section id="insights" class="section">
-      <div class="brand-block">
-        <h2 style="color:white;">🔮 Tech Horizon</h2>
-        <p style="color:#ccc; max-width:600px;">Neural interfaces, generative ecosystems, and zero-latency infrastructure — we build tomorrow.</p>
-      </div>
-      <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem;">
-        <div class="futuristic-btn" style="background: rgba(0,224,255,0.1);"><i class="fa-regular fa-clock"></i> Live demo</div>
-        <div class="futuristic-btn"><i class="fa-regular fa-compass"></i> Explore roadmap</div>
-      </div>
-    </section>
-
+    <!-- CONTACT SECTION with correct email & whatsapp -->
     <section id="contact" class="section">
-      <div class="brand-block">
-        <h2 style="color:white;">⚡ Global Nexus</h2>
-        <p style="color: var(--accent-cyan);">hello@braveglobaltech.xyz</p>
+      <div class="brand-blocks">
+        <div class="brand-block-item"><span>📡 Global Nexus</span></div>
       </div>
-      <div class="hero-tagline" style="max-width:450px; background: rgba(0,0,0,0.6);">
-        <p>Ready to redefine your digital infrastructure? Join the future with Braveglobaltech.</p>
-        <a href="#" class="futuristic-btn">Contact Innovation Desk →</a>
+      <div class="hero-card" style="max-width: 700px;">
+        <h3 style="color: white; font-size: 1.8rem; margin-bottom: 0.5rem;">Connect with Braveglobaltech</h3>
+        <p style="margin-bottom: 1.2rem;">Our innovation consultants respond within 2 hours. Let's build the impossible.</p>
+        <div class="contact-info">
+          <div class="contact-badge">
+            <i class="fa-regular fa-envelope"></i>
+            <a href="mailto:hello@braveglobaltech.com">hello@braveglobaltech.com</a>
+          </div>
+          <div class="contact-badge">
+            <i class="fa-brands fa-whatsapp"></i>
+            <a href="https://wa.me/2348123456789" target="_blank">+234 812 345 6789</a>
+          </div>
+          <div class="contact-badge">
+            <i class="fa-regular fa-comment-dots"></i>
+            <span>24/7 Tech Concierge</span>
+          </div>
+        </div>
+        <div style="margin-top: 1rem; background: rgba(0,0,0,0.4); border-radius: 20px; padding: 0.8rem 1rem;">
+          <p style="color: var(--accent-cyan); font-size: 0.85rem;"><i class="fa-regular fa-clock"></i> Official partner inquiries & enterprise demo: direct WhatsApp or email</p>
+        </div>
       </div>
     </section>
+    <footer>
+      <p>© 2026 Braveglobaltech — Beyond the Horizon. All trademarks are property of respective owners.</p>
+    </footer>
   </main>
 
   <script>
     (function() {
-      // SMOOTH SCROLL ENHANCEMENT - already set by CSS scroll-behavior: smooth, 
-      // but ensure all internal nav-links trigger smooth scroll and avoid default jump
-      const navLinks = document.querySelectorAll('.nav-link');
-      const sideNav = document.getElementById('sideNav');
-      
-      // For better UX when sidebar expands, we adjust main content margin dynamically
-      // to give more space while hovered (optional but polished)
-      if(sideNav) {
-        sideNav.addEventListener('mouseenter', () => {
-          document.body.classList.add('sidebar-expanded');
-        });
-        sideNav.addEventListener('mouseleave', () => {
-          document.body.classList.remove('sidebar-expanded');
-        });
-      }
-
-      // Manual smooth scroll for all internal anchor links (backup to ensure consistency)
-      navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+      // SMOOTH SCROLL for all internal nav links (fully smooth)
+      const allSmoothLinks = document.querySelectorAll('.nav-smooth');
+      allSmoothLinks.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
           const targetId = this.getAttribute('href');
-          if(targetId && targetId.startsWith('#')) {
+          if (targetId && targetId.startsWith('#')) {
             e.preventDefault();
-            const targetElement = document.querySelector(targetId);
-            if(targetElement) {
-              targetElement.scrollIntoView({
+            const targetElem = document.querySelector(targetId);
+            if (targetElem) {
+              targetElem.scrollIntoView({
                 behavior: 'smooth',
-                block: 'start',
-                inline: 'nearest'
+                block: 'start'
               });
-              // update url hash without jump (optional)
               history.pushState(null, null, targetId);
             }
           }
         });
       });
-      
-      // Also handle any other potential click on futuristic buttons that might point to hash
-      const allHashBtns = document.querySelectorAll('a[href^="#"]');
-      allHashBtns.forEach(btn => {
-        btn.addEventListener('click', function(ev) {
-          const hash = this.getAttribute('href');
-          if(hash && hash !== '#') {
-            const target = document.querySelector(hash);
-            if(target) {
-              ev.preventDefault();
-              target.scrollIntoView({ behavior: 'smooth' });
-              history.pushState(null, null, hash);
-            }
-          }
-        });
-      });
-      
-      // Ensure no conflict with initial load if URL hash exists
-      if(window.location.hash) {
+
+      // Ensure any initial hash works
+      if (window.location.hash) {
         const initialTarget = document.querySelector(window.location.hash);
-        if(initialTarget) {
+        if (initialTarget) {
           setTimeout(() => {
             initialTarget.scrollIntoView({ behavior: 'smooth' });
           }, 100);
         }
+      }
+
+      // Small fix for sidebar not affecting content shift: no extra margin changes, it's already robust.
+      // For better mobile touch, ensure hover on sidebar doesn't cause content reflow issues (but it's fine)
+      const nav = document.querySelector('.navigation');
+      if (nav) {
+        nav.addEventListener('mouseenter', () => {
+          // just visual expansion, main content margin stays the same due to fixed positioning.
+          // content margin is independent, no layout shift because sidebar overlay is fixed and content left margin is static.
+        });
       }
     })();
   </script>
