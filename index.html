@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Braveglobaltech | Next-Gen AI & Digital Transformation</title>
+  <title>Braveglobaltech | Futuristic Digital Ecosystem</title>
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts: Inter + Space Grotesk -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -20,14 +20,14 @@
     }
 
     :root {
-      --bg-deep: #0a0a0a;
       --bg-dark: #1b1813;
-      --accent-cyan: #00f2ff;
-      --accent-purple: #b400ff;
-      --accent-glow: rgba(0, 242, 255, 0.3);
-      --text-primary: #ffffff;
-      --text-dim: rgba(255, 255, 255, 0.7);
-      --text-muted: rgba(255, 255, 255, 0.5);
+      --pure-white: #ffffff;
+      --light-blue: #7cb9e8;
+      --accent-blue: #5dade2;
+      --blue-glow: rgba(92, 173, 226, 0.4);
+      --text-white: #ffffff;
+      --text-dim: rgba(255, 255, 255, 0.75);
+      --text-muted: rgba(255, 255, 255, 0.55);
       --nav-width: 75px;
       --nav-width-open: 280px;
       --transition: 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
@@ -37,10 +37,10 @@
       font-family: 'Inter', 'Space Grotesk', sans-serif;
       background-color: var(--bg-dark);
       overflow-x: hidden;
-      color: var(--text-primary);
+      color: var(--text-white);
     }
 
-    /* HERO BACKGROUND SECTION - only hero area has the middle image */
+    /* HERO SECTION - only hero has the middle image effect */
     .hero-section {
       position: relative;
       min-height: 100vh;
@@ -62,7 +62,6 @@
       pointer-events: none;
     }
 
-    /* Color covers top and bottom, image in middle - ONLY in hero */
     .hero-bg-layer::before,
     .hero-bg-layer::after {
       content: '';
@@ -90,31 +89,24 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 75%;
-      max-width: 1300px;
-      height: 65%;
+      width: 70%;
+      max-width: 1200px;
+      height: 60%;
       background-image: url('https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1600');
       background-size: cover;
       background-position: center 20%;
-      border-radius: 50px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(0,242,255,0.4);
+      border-radius: 48px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(124, 185, 232, 0.4);
       z-index: 1;
-      opacity: 0.92;
+      opacity: 0.88;
     }
 
     .hero-center-image::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 30% 20%, rgba(0,242,255,0.15), transparent 70%);
-      border-radius: 50px;
-    }
-
-    /* Other sections have solid dark background */
-    .section-solid {
-      background: var(--bg-dark);
-      position: relative;
-      z-index: 5;
+      background: radial-gradient(circle at 30% 20%, rgba(124, 185, 232, 0.12), transparent 70%);
+      border-radius: 48px;
     }
 
     /* SIDEBAR NAVIGATION */
@@ -127,7 +119,7 @@
       background: rgba(27, 24, 19, 0.95);
       backdrop-filter: blur(20px);
       border-radius: 40px;
-      border: 1px solid rgba(0, 242, 255, 0.4);
+      border: 1px solid rgba(124, 185, 232, 0.5);
       transition: var(--transition);
       display: flex;
       flex-direction: column;
@@ -139,16 +131,14 @@
 
     .navigation:hover {
       width: var(--nav-width-open);
-      backdrop-filter: blur(24px);
-      border-color: rgba(0, 242, 255, 0.8);
+      border-color: var(--light-blue);
     }
 
     @media (max-width: 768px) {
       .navigation { width: 60px; top: 12px; left: 12px; bottom: 12px; }
       .navigation:hover { width: 250px; }
-      .main-wrapper { margin-left: 78px !important; padding: 1rem 1.2rem !important; }
+      .main-wrapper { margin-left: 78px !important; padding: 0 !important; }
       .hero-center-image { width: 88%; height: 45%; }
-      .hero-section .hero-card h1 { font-size: 2rem; }
     }
 
     .navigation ul { width: 100%; }
@@ -169,9 +159,8 @@
       height: 100%;
     }
     .navigation ul li:hover a {
-      color: var(--accent-cyan);
-      background: rgba(0, 242, 255, 0.12);
-      text-shadow: 0 0 8px rgba(0,242,255,0.5);
+      color: var(--light-blue);
+      background: rgba(124, 185, 232, 0.12);
     }
     .navigation ul li a::before {
       content: '';
@@ -179,9 +168,9 @@
       left: -4px;
       width: 3px;
       height: 0;
-      background: var(--accent-cyan);
+      background: var(--light-blue);
       border-radius: 4px;
-      box-shadow: 0 0 12px var(--accent-cyan);
+      box-shadow: 0 0 12px var(--light-blue);
       transition: 0.25s;
     }
     .navigation ul li:hover a::before { height: 28px; }
@@ -205,20 +194,20 @@
     .user-box {
       margin-top: auto;
       padding: 18px;
-      border-top: 1px solid rgba(0,242,255,0.2);
+      border-top: 1px solid rgba(124, 185, 232, 0.3);
       display: flex;
       align-items: center;
     }
     .user-img {
       min-width: 40px;
       height: 40px;
-      background: linear-gradient(135deg, #00f2ff, #b400ff);
+      background: linear-gradient(135deg, var(--light-blue), var(--accent-blue));
       border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      color: white;
+      color: var(--bg-dark);
     }
     .user-details {
       margin-left: 12px;
@@ -228,24 +217,28 @@
     }
     .navigation:hover .user-details { opacity: 1; }
     .user-details p { font-size: 0.8rem; font-weight: 600; color: white; }
-    .user-details span { font-size: 0.65rem; color: var(--accent-cyan); }
+    .user-details span { font-size: 0.65rem; color: var(--light-blue); }
 
-    /* MAIN CONTENT WRAPPER */
+    /* MAIN WRAPPER */
     .main-wrapper {
       position: relative;
       z-index: 10;
       margin-left: 95px;
-      transition: margin-left 0.2s;
     }
 
-    /* Reusable Components */
+    /* Containers */
     .container {
       max-width: 1400px;
       margin: 0 auto;
       padding: 4rem 2.5rem;
     }
-    .container-sm { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+    .container-sm {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
 
+    /* Brand Blocks */
     .brand-blocks {
       display: flex;
       flex-wrap: wrap;
@@ -253,29 +246,31 @@
       margin-bottom: 2rem;
     }
     .brand-piece {
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(0,242,255,0.5);
+      border: 1px solid rgba(124, 185, 232, 0.5);
       padding: 12px 28px;
       border-radius: 50px;
       font-size: 1.7rem;
       font-weight: 800;
       font-family: 'Space Grotesk', monospace;
       letter-spacing: 1px;
+      color: var(--pure-white);
     }
     .brand-piece span {
-      background: linear-gradient(135deg, #ffffff, #00f2ff);
+      background: linear-gradient(135deg, var(--pure-white), var(--light-blue));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
+    /* Cards & UI */
     .hero-card {
-      background: rgba(27, 24, 19, 0.75);
+      background: rgba(27, 24, 19, 0.8);
       backdrop-filter: blur(16px);
       border-radius: 42px;
       padding: 2.5rem 2.8rem;
-      border: 1px solid rgba(0,242,255,0.4);
+      border: 1px solid rgba(124, 185, 232, 0.5);
       max-width: 700px;
       position: relative;
       z-index: 10;
@@ -284,7 +279,7 @@
     .hero-card h1 {
       font-size: 3.5rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #fff, #a0f5ff);
+      background: linear-gradient(135deg, var(--pure-white), var(--light-blue));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -293,10 +288,10 @@
 
     .btn-cyber {
       background: transparent;
-      border: 1.8px solid var(--accent-cyan);
+      border: 1.8px solid var(--light-blue);
       padding: 0.8rem 2rem;
       border-radius: 50px;
-      color: var(--accent-cyan);
+      color: var(--light-blue);
       font-weight: 600;
       transition: 0.25s;
       display: inline-flex;
@@ -307,17 +302,17 @@
       font-size: 0.95rem;
     }
     .btn-cyber:hover {
-      background: var(--accent-cyan);
-      color: #1b1813;
-      box-shadow: 0 0 18px var(--accent-cyan);
+      background: var(--light-blue);
+      color: var(--bg-dark);
+      box-shadow: 0 0 20px var(--light-blue);
       transform: scale(1.02);
     }
     .btn-solid {
-      background: var(--accent-cyan);
-      color: #1b1813;
+      background: var(--light-blue);
+      color: var(--bg-dark);
       border: none;
     }
-    .btn-solid:hover { background: #fff; box-shadow: 0 0 20px cyan; }
+    .btn-solid:hover { background: var(--pure-white); box-shadow: 0 0 20px var(--light-blue); }
 
     .grid-4 {
       display: grid;
@@ -330,13 +325,14 @@
       backdrop-filter: blur(10px);
       border-radius: 32px;
       padding: 2rem 1.8rem;
-      border: 1px solid rgba(0,242,255,0.2);
+      border: 1px solid rgba(124, 185, 232, 0.25);
       transition: all 0.3s;
+      cursor: pointer;
     }
-    .glass-card i { font-size: 2.5rem; color: var(--accent-cyan); margin-bottom: 1.2rem; }
-    .glass-card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; }
+    .glass-card i { font-size: 2.5rem; color: var(--light-blue); margin-bottom: 1.2rem; }
+    .glass-card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; color: var(--pure-white); }
     .glass-card p { color: var(--text-dim); line-height: 1.5; }
-    .glass-card:hover { border-color: var(--accent-cyan); transform: translateY(-8px); background: rgba(0,242,255,0.05); }
+    .glass-card:hover { border-color: var(--light-blue); transform: translateY(-8px); background: rgba(124, 185, 232, 0.08); }
 
     .stats-grid {
       display: flex;
@@ -345,61 +341,122 @@
       margin: 2rem 0;
     }
     .stat-item {
-      background: rgba(0,242,255,0.08);
+      background: rgba(124, 185, 232, 0.08);
       border-radius: 28px;
       padding: 1.5rem 2rem;
       text-align: center;
       min-width: 150px;
+      border: 1px solid rgba(124, 185, 232, 0.3);
     }
-    .stat-item h2 { font-size: 2.5rem; color: var(--accent-cyan); }
+    .stat-item h2 { font-size: 2.5rem; color: var(--light-blue); }
+    .stat-item p { color: var(--text-dim); }
+
     .testimonial-card {
-      background: rgba(0,0,0,0.5);
+      background: rgba(255, 255, 255, 0.04);
       border-radius: 28px;
       padding: 1.8rem;
-      border-left: 4px solid var(--accent-cyan);
+      border-left: 4px solid var(--light-blue);
     }
+
     .contact-chip {
-      background: rgba(0,242,255,0.12);
+      background: rgba(124, 185, 232, 0.12);
       border-radius: 60px;
       padding: 0.9rem 1.8rem;
       display: inline-flex;
       align-items: center;
       gap: 14px;
       margin: 0.5rem 1rem 0.5rem 0;
+      border: 1px solid rgba(124, 185, 232, 0.3);
     }
-    .contact-chip a, .contact-chip span { color: white; text-decoration: none; font-weight: 500; }
-    .contact-chip a:hover { color: var(--accent-cyan); }
+    .contact-chip a, .contact-chip span { color: var(--pure-white); text-decoration: none; font-weight: 500; }
+    .contact-chip a:hover { color: var(--light-blue); }
+    .contact-chip i { color: var(--light-blue); }
+
     .section-title {
       font-size: 2.2rem;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, #fff, #00f2ff);
+      background: linear-gradient(135deg, var(--pure-white), var(--light-blue));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
+
+    /* Functionality: Newsletter & Counter */
+    .newsletter-box {
+      background: rgba(124, 185, 232, 0.08);
+      border-radius: 32px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(124, 185, 232, 0.3);
+      margin: 2rem 0;
+    }
+    .newsletter-input {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .newsletter-input input {
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      border: 1px solid var(--light-blue);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      width: 280px;
+      font-family: inherit;
+    }
+    .newsletter-input input::placeholder { color: var(--text-muted); }
+    .toast-msg {
+      margin-top: 1rem;
+      color: var(--light-blue);
+      font-size: 0.9rem;
+    }
+
+    /* Counter */
+    .counter-demo {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+    .counter-box {
+      text-align: center;
+      background: rgba(124, 185, 232, 0.05);
+      padding: 1rem;
+      border-radius: 24px;
+      min-width: 100px;
+    }
+    .counter-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--light-blue);
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
-      border-top: 1px solid rgba(0,242,255,0.15);
+      border-top: 1px solid rgba(124, 185, 232, 0.2);
       color: var(--text-muted);
     }
+
     @media (max-width: 650px) {
       .hero-card { padding: 1.5rem; }
-      .container { padding: 2rem 1.2rem; }
+      .container, .container-sm { padding: 2rem 1.2rem; }
       .brand-piece { font-size: 1.2rem; padding: 8px 18px; }
+      .hero-card h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- SIDEBAR -->
 <nav class="navigation">
   <ul>
-    <li><a href="#home" class="nav-smooth"><span class="icon"><i class="fa-solid fa-globe"></i></span><span class="title">Home</span></a></li>
+    <li><a href="#home" class="nav-smooth"><span class="icon"><i class="fa-solid fa-house"></i></span><span class="title">Home</span></a></li>
     <li><a href="#services" class="nav-smooth"><span class="icon"><i class="fa-solid fa-microchip"></i></span><span class="title">Services</span></a></li>
     <li><a href="#solutions" class="nav-smooth"><span class="icon"><i class="fa-solid fa-brain"></i></span><span class="title">Solutions</span></a></li>
     <li><a href="#portfolio" class="nav-smooth"><span class="icon"><i class="fa-solid fa-folder-tree"></i></span><span class="title">Portfolio</span></a></li>
-    <li><a href="#insights" class="nav-smooth"><span class="icon"><i class="fa-solid fa-chart-line"></i></span><span class="title">Insights</span></a></li>
     <li><a href="#team" class="nav-smooth"><span class="icon"><i class="fa-solid fa-users"></i></span><span class="title">Team</span></a></li>
     <li><a href="#contact" class="nav-smooth"><span class="icon"><i class="fa-solid fa-headset"></i></span><span class="title">Contact</span></a></li>
   </ul>
@@ -413,11 +470,9 @@
 </nav>
 
 <div class="main-wrapper">
-  <!-- HERO SECTION with background image (only hero) -->
+  <!-- HERO SECTION -->
   <section id="home" class="hero-section">
-    <div class="hero-bg-layer">
-      <div class="hero-center-image"></div>
-    </div>
+    <div class="hero-bg-layer"><div class="hero-center-image"></div></div>
     <div class="container" style="position: relative; z-index: 10;">
       <div class="brand-blocks">
         <div class="brand-piece"><span>BRAVE</span></div>
@@ -425,7 +480,7 @@
         <div class="brand-piece"><span>TECH</span></div>
       </div>
       <div class="hero-card">
-        <h1>Redefining Intelligence<br>Beyond Boundaries</h1>
+        <h1>Beyond Boundaries.<br>Beyond Code.</h1>
         <p style="margin: 1.2rem 0; font-size: 1.1rem;">AI-first infrastructure · Quantum Security · Immersive Metaverse · Global Edge Cloud</p>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
           <a href="#services" class="btn-cyber nav-smooth">Explore Ecosystem <i class="fa-regular fa-arrow-right"></i></a>
@@ -433,132 +488,125 @@
         </div>
       </div>
       <div class="stats-grid">
-        <div class="stat-item"><h2>350+</h2><p>Projects Delivered</p></div>
-        <div class="stat-item"><h2>99.9%</h2><p>Uptime SLA</p></div>
-        <div class="stat-item"><h2>24/7</h2><p>Global Support</p></div>
-        <div class="stat-item"><h2>45+</h2><p>Enterprise Clients</p></div>
+        <div class="stat-item"><h2 class="counter-stat" data-target="380">0</h2><p>Projects Delivered</p></div>
+        <div class="stat-item"><h2 class="counter-stat" data-target="99">0</h2><p>Client Satisfaction %</p></div>
+        <div class="stat-item"><h2 class="counter-stat" data-target="24">0</h2><p>Global Support (hrs)</p></div>
+        <div class="stat-item"><h2 class="counter-stat" data-target="52">0</h2><p>Enterprise Clients</p></div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES SECTION (rich) -->
+  <!-- SERVICES -->
   <section id="services" class="section-solid">
     <div class="container-sm">
       <div class="brand-blocks"><div class="brand-piece"><span>⚡ Core Services</span></div></div>
       <h2 class="section-title">What We Deliver</h2>
       <div class="grid-4">
-        <div class="glass-card"><i class="fa-solid fa-brain"></i><h3>Generative AI Engines</h3><p>Custom LLMs, autonomous agents, computer vision, and real-time content generation tailored to your domain.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-cloud-arrow-up"></i><h3>Edge Cloud Fabric</h3><p>Global serverless infrastructure with sub-10ms latency, auto-scaling, and multi-region deployment.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-shield-haltered"></i><h3>Quantum-Safe Security</h3><p>Post-quantum cryptography, zero-trust architecture, blockchain identity, and advanced threat detection.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-cube"></i><h3>Metaverse & Digital Twins</h3><p>Immersive 3D worlds, AR/VR experiences, real-time simulations for retail, real estate, and training.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-chart-line"></i><h3>Predictive Analytics Suite</h3><p>AI-driven forecasting, anomaly detection, and business intelligence dashboards with real-time insights.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-robot"></i><h3>Intelligent Automation</h3><p>RPA + cognitive bots that streamline finance, HR, logistics, and customer support operations.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-database"></i><h3>Data Mesh & Lakehouses</h3><p>Unified data platforms with governance, lineage, and federated queries for enterprise-scale analytics.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-vr-cardboard"></i><h3>Spatial Computing</h3><p>Next-gen AR glasses integration, gesture recognition, and immersive training modules.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-brain"></i><h3>Generative AI Engines</h3><p>Custom LLMs, autonomous agents, computer vision, and real-time content generation.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-cloud-arrow-up"></i><h3>Edge Cloud Fabric</h3><p>Global serverless infrastructure with sub-10ms latency and auto-scaling.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-shield-haltered"></i><h3>Quantum-Safe Security</h3><p>Post-quantum cryptography, zero-trust architecture, advanced threat detection.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-cube"></i><h3>Metaverse & Digital Twins</h3><p>Immersive 3D worlds, AR/VR experiences, real-time simulations.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-chart-line"></i><h3>Predictive Analytics Suite</h3><p>AI-driven forecasting, anomaly detection, real-time BI dashboards.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-robot"></i><h3>Intelligent Automation</h3><p>RPA + cognitive bots for finance, HR, logistics, customer support.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- SOLUTIONS / INNOVATION LABS -->
+  <!-- SOLUTIONS -->
   <section id="solutions" class="section-solid">
     <div class="container-sm">
       <div class="brand-blocks"><div class="brand-piece"><span>🧠 Innovation Labs</span></div></div>
       <h2 class="section-title">Research & Breakthroughs</h2>
       <div class="grid-4">
-        <div class="glass-card"><i class="fa-solid fa-microchip"></i><h3>Neuromorphic Chips</h3><p>Custom silicon for AI workloads, 10x energy efficiency. Prototypes available for early access.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-dna"></i><h3>Generative Biology</h3><p>Protein folding & drug discovery using diffusion models. Partnering with biotech leaders.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-satellite-dish"></i><h3>Space Edge Network</h3><p>LEO satellite mesh for ultra-low latency global connectivity — beta trials 2026.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-brain"></i><h3>Brain-Computer Interface</h3><p>Non-invasive neural input for assistive tech and next-gen UX.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-microchip"></i><h3>Neuromorphic Chips</h3><p>Custom silicon for AI workloads, 10x energy efficiency.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-dna"></i><h3>Generative Biology</h3><p>Protein folding & drug discovery using diffusion models.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-satellite-dish"></i><h3>Space Edge Network</h3><p>LEO satellite mesh for ultra-low latency global connectivity.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-brain"></i><h3>Brain-Computer Interface</h3><p>Non-invasive neural input for next-gen UX.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLIO / CASE STUDIES (bulky) -->
+  <!-- PORTFOLIO -->
   <section id="portfolio" class="section-solid">
     <div class="container-sm">
       <div class="brand-blocks"><div class="brand-piece"><span>🏆 Success Stories</span></div></div>
       <h2 class="section-title">Trusted by Industry Leaders</h2>
       <div class="grid-4">
-        <div class="glass-card"><i class="fa-solid fa-bank"></i><h3>United Bank of Africa</h3><p>AI fraud detection system reduced false positives by 72% and saved $18M in first year.</p><span style="color:#00f2ff;">★ 2025</span></div>
-        <div class="glass-card"><i class="fa-solid fa-plane"></i><h3>Airline Predictive Maintenance</h3><p>Real-time engine monitoring reduced downtime by 53% across 300+ aircraft fleet.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-cart-shopping"></i><h3>Retail Giant (Jumia Group)</h3><p>Omnichannel analytics engine boosted conversion by 41% and optimized inventory by 27%.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-gamepad"></i><h3>Metaverse World Builder</h3><p>Powered virtual concert with 5M concurrent users using Braveglobaltech edge cloud.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-hospital"></i><h3>HealthAI Diagnostics</h3><p>Deployed computer vision for radiology, improving detection accuracy by 34%.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-oil-well"></i><h3>Energy Sector Optimization</h3><p>Predictive analytics for drilling ops saved $42M annually in operational costs.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-bank"></i><h3>United Bank of Africa</h3><p>AI fraud detection reduced false positives by 72%, saved $18M.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-plane"></i><h3>Airline Predictive Maintenance</h3><p>Reduced downtime by 53% across 300+ aircraft fleet.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-cart-shopping"></i><h3>Retail Giant</h3><p>Omnichannel analytics boosted conversion by 41%.</p></div>
+        <div class="glass-card"><i class="fa-solid fa-gamepad"></i><h3>Metaverse World Builder</h3><p>Powered virtual concert with 5M concurrent users.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- INSIGHTS / BLOG STYLE -->
-  <section id="insights" class="section-solid">
-    <div class="container-sm">
-      <div class="brand-blocks"><div class="brand-piece"><span>📊 Tech Insights</span></div></div>
-      <h2 class="section-title">Future Signals</h2>
-      <div class="grid-4">
-        <div class="glass-card"><i class="fa-regular fa-newspaper"></i><h3>AI Agents 2026</h3><p>Autonomous workforce: How multi-agent systems will reshape enterprises by 2027.</p><a href="#" style="color:#00f2ff;">Read more →</a></div>
-        <div class="glass-card"><i class="fa-regular fa-clock"></i><h3>Quantum Advantage</h3><p>Post-quantum cryptography standards — prepare your infrastructure today.</p></div>
-        <div class="glass-card"><i class="fa-regular fa-lightbulb"></i><h3>Spatial Web</h3><p>The convergence of AR, digital twins, and real-time data streams.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEAM SECTION -->
+  <!-- TEAM + INTERACTIVE COUNTER / NEWSLETTER -->
   <section id="team" class="section-solid">
     <div class="container-sm">
-      <div class="brand-blocks"><div class="brand-piece"><span>👥 Executive Leadership</span></div></div>
+      <div class="brand-blocks"><div class="brand-piece"><span>👥 Leadership</span></div></div>
       <h2 class="section-title">The Minds Behind the Magic</h2>
       <div class="grid-4">
-        <div class="glass-card"><i class="fa-solid fa-user-astronaut"></i><h3>Dr. Ada Nwachukwu</h3><p>CEO & Chief AI Architect<br>Ex-DeepMind, PhD Stanford, 30+ patents</p></div>
-        <div class="glass-card"><i class="fa-solid fa-user-ninja"></i><h3>Michael Chen</h3><p>CTO, Quantum Lead<br>Former NASA JPL, MIT Media Lab</p></div>
-        <div class="glass-card"><i class="fa-solid fa-user-tie"></i><h3>Elena Vasquez</h3><p>Head of Product<br>20+ years in immersive tech, ex-Magic Leap</p></div>
-        <div class="glass-card"><i class="fa-solid fa-chart-line"></i><h3>David Okafor</h3><p>Chief Strategy Officer<br>Ex-McKinsey, digital transformation expert</p></div>
+        <div class="glass-card"><i class="fa-solid fa-user-astronaut"></i><h3>Dr. Ada Nwachukwu</h3><p>CEO & Chief AI Architect<br>Ex-DeepMind, PhD Stanford</p></div>
+        <div class="glass-card"><i class="fa-solid fa-user-ninja"></i><h3>Michael Chen</h3><p>CTO, Quantum Lead<br>Former NASA JPL</p></div>
+        <div class="glass-card"><i class="fa-solid fa-user-tie"></i><h3>Elena Vasquez</h3><p>Head of Product<br>Ex-Magic Leap</p></div>
+        <div class="glass-card"><i class="fa-solid fa-chart-line"></i><h3>David Okafor</h3><p>Chief Strategy Officer<br>Ex-McKinsey</p></div>
       </div>
-      <div class="testimonial-card" style="margin-top: 2rem;">
-        <i class="fa-solid fa-quote-left" style="color:#00f2ff; font-size: 2rem;"></i>
-        <p style="margin: 1rem 0; font-size: 1.1rem;">"Braveglobaltech didn't just deliver software — they transformed our entire digital DNA. Their AI solutions are years ahead."</p>
+      
+      <!-- Interactive Counter Demo (Functionality) -->
+      <div class="newsletter-box">
+        <i class="fa-solid fa-chart-simple" style="font-size: 2rem; color: var(--light-blue);"></i>
+        <h3 style="margin: 1rem 0;">Live Impact Counter</h3>
+        <p>Braveglobaltech's global AI impact in real-time</p>
+        <div class="counter-demo">
+          <div class="counter-box"><div class="counter-num" id="liveCounter">0</div><span>AI Models Deployed</span></div>
+          <div class="counter-box"><div class="counter-num" id="liveCounter2">0</div><span>Data Processed (PB)</span></div>
+        </div>
+        <button id="impactBtn" class="btn-cyber" style="margin-top: 1rem;">⚡ Simulate Impact <i class="fa-regular fa-bolt"></i></button>
+      </div>
+      
+      <div class="testimonial-card">
+        <i class="fa-solid fa-quote-left" style="color: var(--light-blue); font-size: 2rem;"></i>
+        <p style="margin: 1rem 0; font-size: 1.1rem;">"Braveglobaltech transformed our entire digital DNA. Their AI solutions are years ahead."</p>
         <p><strong>— CTO, Fortune 500 Retail Chain</strong></p>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION (correct email & WhatsApp number) -->
+  <!-- CONTACT SECTION (correct email & WhatsApp) + NEWSLETTER SUBSCRIBE -->
   <section id="contact" class="section-solid">
     <div class="container-sm">
       <div class="brand-blocks"><div class="brand-piece"><span>📡 Global Nexus</span></div></div>
       <h2 class="section-title">Let's Build the Impossible</h2>
       <div class="glass-card" style="max-width: 800px; margin: 1rem 0;">
-        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Our innovation consultants respond within 2 hours. Direct line to our tech leadership.</p>
+        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Our innovation consultants respond within 2 hours.</p>
         <div>
           <div class="contact-chip"><i class="fa-regular fa-envelope"></i><a href="mailto:graphics.anonymous290@gmail.com">graphics.anonymous290@gmail.com</a></div>
           <div class="contact-chip"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/2349151186880" target="_blank">+234 915 118 6880 (WhatsApp)</a></div>
           <div class="contact-chip"><i class="fa-regular fa-building"></i><span>14A Bishop Oluwole Street, Victoria Island, Lagos, Nigeria</span></div>
-          <div class="contact-chip"><i class="fa-regular fa-clock"></i><span>24/7 Enterprise Support | Live chat & video call available</span></div>
         </div>
-        <div style="margin-top: 2rem; background: rgba(0,0,0,0.4); border-radius: 24px; padding: 1rem;">
-          <p><i class="fa-regular fa-message"></i> Emergency support: <strong>+234 915 118 6880</strong> (direct line for existing clients)</p>
+      </div>
+      
+      <!-- Newsletter Subscription Functionality -->
+      <div class="newsletter-box">
+        <i class="fa-regular fa-bell" style="font-size: 2rem; color: var(--light-blue);"></i>
+        <h3 style="margin: 0.5rem 0;">Subscribe to Future Pulse</h3>
+        <p>Get monthly insights on AI, quantum tech, and metaverse trends.</p>
+        <div class="newsletter-input">
+          <input type="email" id="newsEmail" placeholder="Your email address">
+          <button id="subscribeBtn" class="btn-cyber btn-solid">Subscribe <i class="fa-regular fa-paper-plane"></i></button>
         </div>
+        <div id="toastMsg" class="toast-msg"></div>
       </div>
     </div>
   </section>
 
-  <!-- EXTRA BULK: FAQ + PARTNERS -->
-  <div class="section-solid">
-    <div class="container-sm">
-      <div class="grid-4">
-        <div class="glass-card"><i class="fa-regular fa-circle-question"></i><h3>FAQ</h3><p><strong>What industries do you serve?</strong><br>Finance, healthcare, retail, logistics, energy, entertainment, government.<br><br><strong>Do you offer custom solutions?</strong><br>Yes, 100% tailored AI & cloud systems from prototype to production.</p></div>
-        <div class="glass-card"><i class="fa-regular fa-handshake"></i><h3>Partners & Alliances</h3><p>AWS Premier Partner · NVIDIA Inception · Microsoft Gold · Google Cloud Build. Co-innovation with leading research universities.</p></div>
-        <div class="glass-card"><i class="fa-regular fa-calendar"></i><h3>Upcoming Events</h3><p>▪ AI Summit Lagos - March 2026<br>▪ Quantum World Congress - Berlin<br>▪ Web3 Expo - Dubai</p></div>
-      </div>
-    </div>
-  </div>
-
   <footer>
-    <p>© 2026 Braveglobaltech — Beyond Boundaries. Innovating the impossible. | All trademarks are property of respective owners.</p>
+    <p>© 2026 Braveglobaltech — Beyond Boundaries. Innovating the impossible. | White · #1b1813 · Light Blue</p>
   </footer>
 </div>
 
 <script>
-  // Smooth scroll for all nav links
+  // SMOOTH SCROLL
   document.querySelectorAll('.nav-smooth').forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -572,11 +620,76 @@
       }
     });
   });
-  // Initial hash handling
-  if (window.location.hash) {
-    const el = document.querySelector(window.location.hash);
-    if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
-  }
+
+  // COUNTER ANIMATION FOR STATS
+  const counters = document.querySelectorAll('.counter-stat');
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-target'));
+      let current = 0;
+      const increment = target / 80;
+      const updateCounter = () => {
+        if (current < target) {
+          current += increment;
+          counter.innerText = Math.floor(current);
+          setTimeout(updateCounter, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCounter();
+    });
+  };
+  animateCounters();
+
+  // LIVE COUNTER FUNCTIONALITY (Simulate Impact)
+  let aiModels = 1240;
+  let dataPB = 856;
+  const liveCounterEl = document.getElementById('liveCounter');
+  const liveCounter2El = document.getElementById('liveCounter2');
+  liveCounterEl.innerText = aiModels;
+  liveCounter2El.innerText = dataPB;
+  
+  document.getElementById('impactBtn').addEventListener('click', () => {
+    aiModels += Math.floor(Math.random() * 50) + 10;
+    dataPB += Math.floor(Math.random() * 30) + 5;
+    liveCounterEl.innerText = aiModels;
+    liveCounter2El.innerText = dataPB;
+    // Flash effect
+    const btn = document.getElementById('impactBtn');
+    btn.style.transform = 'scale(0.98)';
+    setTimeout(() => btn.style.transform = '', 150);
+  });
+
+  // NEWSLETTER SUBSCRIBE FUNCTIONALITY
+  const subscribeBtn = document.getElementById('subscribeBtn');
+  const newsEmail = document.getElementById('newsEmail');
+  const toastMsg = document.getElementById('toastMsg');
+  
+  subscribeBtn.addEventListener('click', () => {
+    const email = newsEmail.value.trim();
+    if (email && email.includes('@') && email.includes('.')) {
+      toastMsg.innerHTML = `<i class="fa-regular fa-circle-check"></i> Thanks! ${email} is now subscribed. Future insights incoming.`;
+      toastMsg.style.color = '#7cb9e8';
+      newsEmail.value = '';
+      setTimeout(() => { toastMsg.innerHTML = ''; }, 4000);
+    } else {
+      toastMsg.innerHTML = `<i class="fa-regular fa-circle-xmark"></i> Please enter a valid email address.`;
+      toastMsg.style.color = '#ff8888';
+      setTimeout(() => { toastMsg.innerHTML = ''; }, 3000);
+    }
+  });
+
+  // Add interactive hover sound effect (visual only)
+  const allCards = document.querySelectorAll('.glass-card');
+  allCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // subtle interaction
+      card.style.transition = '0.1s';
+      card.style.transform = 'scale(0.99)';
+      setTimeout(() => { card.style.transform = ''; }, 150);
+    });
+  });
 </script>
 </body>
 </html>
