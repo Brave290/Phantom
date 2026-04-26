@@ -2,694 +2,462 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Braveglobaltech | Futuristic Digital Ecosystem</title>
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACTIVE SUREPLUG - Future of Video Editing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      letter-spacing: 0.05em;
     }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    :root {
-      --bg-dark: #1b1813;
-      --pure-white: #ffffff;
-      --light-blue: #7cb9e8;
-      --accent-blue: #5dade2;
-      --blue-glow: rgba(92, 173, 226, 0.4);
-      --text-white: #ffffff;
-      --text-dim: rgba(255, 255, 255, 0.75);
-      --text-muted: rgba(255, 255, 255, 0.55);
-      --nav-width: 75px;
-      --nav-width-open: 280px;
-      --transition: 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-
+    
     body {
-      font-family: 'Inter', 'Space Grotesk', sans-serif;
-      background-color: var(--bg-dark);
-      overflow-x: hidden;
-      color: var(--text-white);
+      background: linear-gradient(135deg, #0a0a1a 0%, #0f0f2e 50%, #1a1a3e 100%);
     }
 
-    /* HERO SECTION - only hero has the middle image effect */
-    .hero-section {
-      position: relative;
-      min-height: 100vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      overflow: hidden;
-      background: var(--bg-dark);
-    }
-
-    .hero-bg-layer {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .hero-bg-layer::before,
-    .hero-bg-layer::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      width: 100%;
-      background: var(--bg-dark);
-      z-index: 2;
-    }
-
-    .hero-bg-layer::before {
-      top: 0;
-      height: 20%;
-      background: linear-gradient(to bottom, #1b1813 0%, #1b1813 50%, rgba(27,24,19,0.7) 100%);
-    }
-
-    .hero-bg-layer::after {
-      bottom: 0;
-      height: 20%;
-      background: linear-gradient(to top, #1b1813 0%, #1b1813 50%, rgba(27,24,19,0.7) 100%);
-    }
-
-    .hero-center-image {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 70%;
-      max-width: 1200px;
-      height: 60%;
-      background-image: url('https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1600');
-      background-size: cover;
-      background-position: center 20%;
-      border-radius: 48px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(124, 185, 232, 0.4);
-      z-index: 1;
-      opacity: 0.88;
-    }
-
-    .hero-center-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 30% 20%, rgba(124, 185, 232, 0.12), transparent 70%);
-      border-radius: 48px;
-    }
-
-    /* SIDEBAR NAVIGATION */
-    .navigation {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      bottom: 20px;
-      width: var(--nav-width);
-      background: rgba(27, 24, 19, 0.95);
+    .glass-effect {
+      background: rgba(15, 15, 46, 0.6);
       backdrop-filter: blur(20px);
-      border-radius: 40px;
-      border: 1px solid rgba(124, 185, 232, 0.5);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      padding: 24px 0;
-      overflow: hidden;
-      z-index: 1000;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(59, 130, 246, 0.1);
     }
 
-    .navigation:hover {
-      width: var(--nav-width-open);
-      border-color: var(--light-blue);
+    .glow-text {
+      text-shadow: 0 0 30px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1);
     }
 
-    @media (max-width: 768px) {
-      .navigation { width: 60px; top: 12px; left: 12px; bottom: 12px; }
-      .navigation:hover { width: 250px; }
-      .main-wrapper { margin-left: 78px !important; padding: 0 !important; }
-      .hero-center-image { width: 88%; height: 45%; }
+    .neon-border {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.2), inset 0 0 20px rgba(59, 130, 246, 0.05);
     }
 
-    .navigation ul { width: 100%; }
-    .navigation ul li {
-      list-style: none;
-      height: 58px;
-      padding: 0 12px;
-      margin: 6px 0;
-    }
-    .navigation ul li a {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: var(--text-dim);
-      border-radius: 24px;
-      transition: 0.25s;
-      cursor: pointer;
-      height: 100%;
-    }
-    .navigation ul li:hover a {
-      color: var(--light-blue);
-      background: rgba(124, 185, 232, 0.12);
-    }
-    .navigation ul li a::before {
-      content: '';
-      position: absolute;
-      left: -4px;
-      width: 3px;
-      height: 0;
-      background: var(--light-blue);
-      border-radius: 4px;
-      box-shadow: 0 0 12px var(--light-blue);
-      transition: 0.25s;
-    }
-    .navigation ul li:hover a::before { height: 28px; }
-    .icon {
-      min-width: 48px;
-      height: 48px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.3rem;
-    }
-    .title {
-      padding-left: 14px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      opacity: 0;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-    .navigation:hover .title { opacity: 1; }
-    .user-box {
-      margin-top: auto;
-      padding: 18px;
-      border-top: 1px solid rgba(124, 185, 232, 0.3);
-      display: flex;
-      align-items: center;
-    }
-    .user-img {
-      min-width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, var(--light-blue), var(--accent-blue));
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: var(--bg-dark);
-    }
-    .user-details {
-      margin-left: 12px;
-      opacity: 0;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-    .navigation:hover .user-details { opacity: 1; }
-    .user-details p { font-size: 0.8rem; font-weight: 600; color: white; }
-    .user-details span { font-size: 0.65rem; color: var(--light-blue); }
-
-    /* MAIN WRAPPER */
-    .main-wrapper {
-      position: relative;
-      z-index: 10;
-      margin-left: 95px;
+    .timeline-dot {
+      background: radial-gradient(circle, rgba(59, 130, 246, 1) 0%, rgba(59, 130, 246, 0) 70%);
     }
 
-    /* Containers */
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 4rem 2.5rem;
-    }
-    .container-sm {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
+    .floating {
+      animation: float 6s ease-in-out infinite;
     }
 
-    /* Brand Blocks */
-    .brand-blocks {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 2rem;
-    }
-    .brand-piece {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(124, 185, 232, 0.5);
-      padding: 12px 28px;
-      border-radius: 50px;
-      font-size: 1.7rem;
-      font-weight: 800;
-      font-family: 'Space Grotesk', monospace;
-      letter-spacing: 1px;
-      color: var(--pure-white);
-    }
-    .brand-piece span {
-      background: linear-gradient(135deg, var(--pure-white), var(--light-blue));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
     }
 
-    /* Cards & UI */
-    .hero-card {
-      background: rgba(27, 24, 19, 0.8);
-      backdrop-filter: blur(16px);
-      border-radius: 42px;
-      padding: 2.5rem 2.8rem;
-      border: 1px solid rgba(124, 185, 232, 0.5);
-      max-width: 700px;
-      position: relative;
-      z-index: 10;
-      margin: 2rem 0;
-    }
-    .hero-card h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, var(--pure-white), var(--light-blue));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      line-height: 1.2;
+    .glitch-effect {
+      animation: glitch 5s infinite;
     }
 
-    .btn-cyber {
-      background: transparent;
-      border: 1.8px solid var(--light-blue);
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      color: var(--light-blue);
-      font-weight: 600;
-      transition: 0.25s;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    .btn-cyber:hover {
-      background: var(--light-blue);
-      color: var(--bg-dark);
-      box-shadow: 0 0 20px var(--light-blue);
-      transform: scale(1.02);
-    }
-    .btn-solid {
-      background: var(--light-blue);
-      color: var(--bg-dark);
-      border: none;
-    }
-    .btn-solid:hover { background: var(--pure-white); box-shadow: 0 0 20px var(--light-blue); }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-    .glass-card {
-      background: rgba(255, 255, 255, 0.04);
-      backdrop-filter: blur(10px);
-      border-radius: 32px;
-      padding: 2rem 1.8rem;
-      border: 1px solid rgba(124, 185, 232, 0.25);
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-    .glass-card i { font-size: 2.5rem; color: var(--light-blue); margin-bottom: 1.2rem; }
-    .glass-card h3 { font-size: 1.4rem; margin-bottom: 0.8rem; color: var(--pure-white); }
-    .glass-card p { color: var(--text-dim); line-height: 1.5; }
-    .glass-card:hover { border-color: var(--light-blue); transform: translateY(-8px); background: rgba(124, 185, 232, 0.08); }
-
-    .stats-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-    .stat-item {
-      background: rgba(124, 185, 232, 0.08);
-      border-radius: 28px;
-      padding: 1.5rem 2rem;
-      text-align: center;
-      min-width: 150px;
-      border: 1px solid rgba(124, 185, 232, 0.3);
-    }
-    .stat-item h2 { font-size: 2.5rem; color: var(--light-blue); }
-    .stat-item p { color: var(--text-dim); }
-
-    .testimonial-card {
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 28px;
-      padding: 1.8rem;
-      border-left: 4px solid var(--light-blue);
+    @keyframes glitch {
+      0%, 100% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
     }
 
-    .contact-chip {
-      background: rgba(124, 185, 232, 0.12);
-      border-radius: 60px;
-      padding: 0.9rem 1.8rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      margin: 0.5rem 1rem 0.5rem 0;
-      border: 1px solid rgba(124, 185, 232, 0.3);
-    }
-    .contact-chip a, .contact-chip span { color: var(--pure-white); text-decoration: none; font-weight: 500; }
-    .contact-chip a:hover { color: var(--light-blue); }
-    .contact-chip i { color: var(--light-blue); }
-
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, var(--pure-white), var(--light-blue));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    /* Functionality: Newsletter & Counter */
-    .newsletter-box {
-      background: rgba(124, 185, 232, 0.08);
-      border-radius: 32px;
-      padding: 2rem;
-      text-align: center;
-      border: 1px solid rgba(124, 185, 232, 0.3);
-      margin: 2rem 0;
-    }
-    .newsletter-input {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    .newsletter-input input {
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      border: 1px solid var(--light-blue);
-      background: rgba(0,0,0,0.5);
-      color: white;
-      width: 280px;
-      font-family: inherit;
-    }
-    .newsletter-input input::placeholder { color: var(--text-muted); }
-    .toast-msg {
-      margin-top: 1rem;
-      color: var(--light-blue);
-      font-size: 0.9rem;
-    }
-
-    /* Counter */
-    .counter-demo {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin: 1rem 0;
-    }
-    .counter-box {
-      text-align: center;
-      background: rgba(124, 185, 232, 0.05);
-      padding: 1rem;
-      border-radius: 24px;
-      min-width: 100px;
-    }
-    .counter-num {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--light-blue);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid rgba(124, 185, 232, 0.2);
-      color: var(--text-muted);
-    }
-
-    @media (max-width: 650px) {
-      .hero-card { padding: 1.5rem; }
-      .container, .container-sm { padding: 2rem 1.2rem; }
-      .brand-piece { font-size: 1.2rem; padding: 8px 18px; }
-      .hero-card h1 { font-size: 2rem; }
+    .grid-pattern {
+      background-image: 
+        linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
     }
   </style>
 </head>
-<body>
+<body class="grid-pattern min-h-screen text-gray-100">
+  <div id="app"></div>
 
-<nav class="navigation">
-  <ul>
-    <li><a href="#home" class="nav-smooth"><span class="icon"><i class="fa-solid fa-house"></i></span><span class="title">Home</span></a></li>
-    <li><a href="#services" class="nav-smooth"><span class="icon"><i class="fa-solid fa-microchip"></i></span><span class="title">Services</span></a></li>
-    <li><a href="#solutions" class="nav-smooth"><span class="icon"><i class="fa-solid fa-brain"></i></span><span class="title">Solutions</span></a></li>
-    <li><a href="#portfolio" class="nav-smooth"><span class="icon"><i class="fa-solid fa-folder-tree"></i></span><span class="title">Portfolio</span></a></li>
-    <li><a href="#team" class="nav-smooth"><span class="icon"><i class="fa-solid fa-users"></i></span><span class="title">Team</span></a></li>
-    <li><a href="#contact" class="nav-smooth"><span class="icon"><i class="fa-solid fa-headset"></i></span><span class="title">Contact</span></a></li>
-  </ul>
-  <div class="user-box">
-    <div class="user-img">BG</div>
-    <div class="user-details">
-      <p>Braveglobaltech</p>
-      <span>Future Ready</span>
-    </div>
-  </div>
-</nav>
-
-<div class="main-wrapper">
-  <!-- HERO SECTION -->
-  <section id="home" class="hero-section">
-    <div class="hero-bg-layer"><div class="hero-center-image"></div></div>
-    <div class="container" style="position: relative; z-index: 10;">
-      <div class="brand-blocks">
-        <div class="brand-piece"><span>BRAVE</span></div>
-        <div class="brand-piece"><span>GLOBAL</span></div>
-        <div class="brand-piece"><span>TECH</span></div>
-      </div>
-      <div class="hero-card">
-        <h1>Beyond Boundaries.<br>Beyond Code.</h1>
-        <p style="margin: 1.2rem 0; font-size: 1.1rem;">AI-first infrastructure · Quantum Security · Immersive Metaverse · Global Edge Cloud</p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <a href="#services" class="btn-cyber nav-smooth">Explore Ecosystem <i class="fa-regular fa-arrow-right"></i></a>
-          <a href="#contact" class="btn-cyber btn-solid nav-smooth">Connect Now</a>
-        </div>
-      </div>
-      <div class="stats-grid">
-        <div class="stat-item"><h2 class="counter-stat" data-target="380">0</h2><p>Projects Delivered</p></div>
-        <div class="stat-item"><h2 class="counter-stat" data-target="99">0</h2><p>Client Satisfaction %</p></div>
-        <div class="stat-item"><h2 class="counter-stat" data-target="24">0</h2><p>Global Support (hrs)</p></div>
-        <div class="stat-item"><h2 class="counter-stat" data-target="52">0</h2><p>Enterprise Clients</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="section-solid">
-    <div class="container-sm">
-      <div class="brand-blocks"><div class="brand-piece"><span>⚡ Core Services</span></div></div>
-      <h2 class="section-title">What We Deliver</h2>
-      <div class="grid-4">
-        <div class="glass-card"><i class="fa-solid fa-brain"></i><h3>Generative AI Engines</h3><p>Custom LLMs, autonomous agents, computer vision, and real-time content generation.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-cloud-arrow-up"></i><h3>Edge Cloud Fabric</h3><p>Global serverless infrastructure with sub-10ms latency and auto-scaling.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-shield-haltered"></i><h3>Quantum-Safe Security</h3><p>Post-quantum cryptography, zero-trust architecture, advanced threat detection.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-cube"></i><h3>Metaverse & Digital Twins</h3><p>Immersive 3D worlds, AR/VR experiences, real-time simulations.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-chart-line"></i><h3>Predictive Analytics Suite</h3><p>AI-driven forecasting, anomaly detection, real-time BI dashboards.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-robot"></i><h3>Intelligent Automation</h3><p>RPA + cognitive bots for finance, HR, logistics, customer support.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOLUTIONS -->
-  <section id="solutions" class="section-solid">
-    <div class="container-sm">
-      <div class="brand-blocks"><div class="brand-piece"><span>🧠 Innovation Labs</span></div></div>
-      <h2 class="section-title">Research & Breakthroughs</h2>
-      <div class="grid-4">
-        <div class="glass-card"><i class="fa-solid fa-microchip"></i><h3>Neuromorphic Chips</h3><p>Custom silicon for AI workloads, 10x energy efficiency.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-dna"></i><h3>Generative Biology</h3><p>Protein folding & drug discovery using diffusion models.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-satellite-dish"></i><h3>Space Edge Network</h3><p>LEO satellite mesh for ultra-low latency global connectivity.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-brain"></i><h3>Brain-Computer Interface</h3><p>Non-invasive neural input for next-gen UX.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="section-solid">
-    <div class="container-sm">
-      <div class="brand-blocks"><div class="brand-piece"><span>🏆 Success Stories</span></div></div>
-      <h2 class="section-title">Trusted by Industry Leaders</h2>
-      <div class="grid-4">
-        <div class="glass-card"><i class="fa-solid fa-bank"></i><h3>United Bank of Africa</h3><p>AI fraud detection reduced false positives by 72%, saved $18M.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-plane"></i><h3>Airline Predictive Maintenance</h3><p>Reduced downtime by 53% across 300+ aircraft fleet.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-cart-shopping"></i><h3>Retail Giant</h3><p>Omnichannel analytics boosted conversion by 41%.</p></div>
-        <div class="glass-card"><i class="fa-solid fa-gamepad"></i><h3>Metaverse World Builder</h3><p>Powered virtual concert with 5M concurrent users.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TEAM + INTERACTIVE COUNTER / NEWSLETTER -->
-  <section id="team" class="section-solid">
-    <div class="container-sm">
-      <div class="brand-blocks"><div class="brand-piece"><span>👥 Leadership</span></div></div>
-      <h2 class="section-title">The Minds Behind the Magic</h2>
-      <div class="grid-4">
-        <div class="glass-card"><i class="fa-solid fa-user-astronaut"></i><h3>Dr. Ada Nwachukwu</h3><p>CEO & Chief AI Architect<br>Ex-DeepMind, PhD Stanford</p></div>
-        <div class="glass-card"><i class="fa-solid fa-user-ninja"></i><h3>Michael Chen</h3><p>CTO, Quantum Lead<br>Former NASA JPL</p></div>
-        <div class="glass-card"><i class="fa-solid fa-user-tie"></i><h3>Elena Vasquez</h3><p>Head of Product<br>Ex-Magic Leap</p></div>
-        <div class="glass-card"><i class="fa-solid fa-chart-line"></i><h3>David Okafor</h3><p>Chief Strategy Officer<br>Ex-McKinsey</p></div>
-      </div>
-      
-      <!-- Interactive Counter Demo (Functionality) -->
-      <div class="newsletter-box">
-        <i class="fa-solid fa-chart-simple" style="font-size: 2rem; color: var(--light-blue);"></i>
-        <h3 style="margin: 1rem 0;">Live Impact Counter</h3>
-        <p>Braveglobaltech's global AI impact in real-time</p>
-        <div class="counter-demo">
-          <div class="counter-box"><div class="counter-num" id="liveCounter">0</div><span>AI Models Deployed</span></div>
-          <div class="counter-box"><div class="counter-num" id="liveCounter2">0</div><span>Data Processed (PB)</span></div>
-        </div>
-        <button id="impactBtn" class="btn-cyber" style="margin-top: 1rem;">⚡ Simulate Impact <i class="fa-regular fa-bolt"></i></button>
-      </div>
-      
-      <div class="testimonial-card">
-        <i class="fa-solid fa-quote-left" style="color: var(--light-blue); font-size: 2rem;"></i>
-        <p style="margin: 1rem 0; font-size: 1.1rem;">"Braveglobaltech transformed our entire digital DNA. Their AI solutions are years ahead."</p>
-        <p><strong>— CTO, Fortune 500 Retail Chain</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION (correct email & WhatsApp) + NEWSLETTER SUBSCRIBE -->
-  <section id="contact" class="section-solid">
-    <div class="container-sm">
-      <div class="brand-blocks"><div class="brand-piece"><span>📡 Global Nexus</span></div></div>
-      <h2 class="section-title">Let's Build the Impossible</h2>
-      <div class="glass-card" style="max-width: 800px; margin: 1rem 0;">
-        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Our innovation consultants respond within 2 hours.</p>
-        <div>
-          <div class="contact-chip"><i class="fa-regular fa-envelope"></i><a href="mailto:graphics.anonymous290@gmail.com">graphics.anonymous290@gmail.com</a></div>
-          <div class="contact-chip"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/2349151186880" target="_blank">+234 915 118 6880 (WhatsApp)</a></div>
-          <div class="contact-chip"><i class="fa-regular fa-building"></i><span>14A Bishop Oluwole Street, Victoria Island, Lagos, Nigeria</span></div>
-        </div>
-      </div>
-      
-      <!-- Newsletter Subscription Functionality -->
-      <div class="newsletter-box">
-        <i class="fa-regular fa-bell" style="font-size: 2rem; color: var(--light-blue);"></i>
-        <h3 style="margin: 0.5rem 0;">Subscribe to Future Pulse</h3>
-        <p>Get monthly insights on AI, quantum tech, and metaverse trends.</p>
-        <div class="newsletter-input">
-          <input type="email" id="newsEmail" placeholder="Your email address">
-          <button id="subscribeBtn" class="btn-cyber btn-solid">Subscribe <i class="fa-regular fa-paper-plane"></i></button>
-        </div>
-        <div id="toastMsg" class="toast-msg"></div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 Braveglobaltech — Beyond Boundaries. Innovating the impossible. | White · #1b1813 · Light Blue</p>
-  </footer>
-</div>
-
-<script>
-  // SMOOTH SCROLL
-  document.querySelectorAll('.nav-smooth').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          history.pushState(null, null, href);
-        }
-      }
-    });
-  });
-
-  // COUNTER ANIMATION FOR STATS
-  const counters = document.querySelectorAll('.counter-stat');
-  const animateCounters = () => {
-    counters.forEach(counter => {
-      const target = parseInt(counter.getAttribute('data-target'));
-      let current = 0;
-      const increment = target / 80;
-      const updateCounter = () => {
-        if (current < target) {
-          current += increment;
-          counter.innerText = Math.floor(current);
-          setTimeout(updateCounter, 20);
-        } else {
-          counter.innerText = target;
-        }
-      };
-      updateCounter();
-    });
-  };
-  animateCounters();
-
-  // LIVE COUNTER FUNCTIONALITY (Simulate Impact)
-  let aiModels = 1240;
-  let dataPB = 856;
-  const liveCounterEl = document.getElementById('liveCounter');
-  const liveCounter2El = document.getElementById('liveCounter2');
-  liveCounterEl.innerText = aiModels;
-  liveCounter2El.innerText = dataPB;
-  
-  document.getElementById('impactBtn').addEventListener('click', () => {
-    aiModels += Math.floor(Math.random() * 50) + 10;
-    dataPB += Math.floor(Math.random() * 30) + 5;
-    liveCounterEl.innerText = aiModels;
-    liveCounter2El.innerText = dataPB;
-    // Flash effect
-    const btn = document.getElementById('impactBtn');
-    btn.style.transform = 'scale(0.98)';
-    setTimeout(() => btn.style.transform = '', 150);
-  });
-
-  // NEWSLETTER SUBSCRIBE FUNCTIONALITY
-  const subscribeBtn = document.getElementById('subscribeBtn');
-  const newsEmail = document.getElementById('newsEmail');
-  const toastMsg = document.getElementById('toastMsg');
-  
-  subscribeBtn.addEventListener('click', () => {
-    const email = newsEmail.value.trim();
-    if (email && email.includes('@') && email.includes('.')) {
-      toastMsg.innerHTML = `<i class="fa-regular fa-circle-check"></i> Thanks! ${email} is now subscribed. Future insights incoming.`;
-      toastMsg.style.color = '#7cb9e8';
-      newsEmail.value = '';
-      setTimeout(() => { toastMsg.innerHTML = ''; }, 4000);
-    } else {
-      toastMsg.innerHTML = `<i class="fa-regular fa-circle-xmark"></i> Please enter a valid email address.`;
-      toastMsg.style.color = '#ff8888';
-      setTimeout(() => { toastMsg.innerHTML = ''; }, 3000);
+  <script type="module">
+    // TypeScript-like code with type annotations in comments
+    interface NavItem {
+      label: string;
+      href: string;
+      active?: boolean;
     }
-  });
 
-  // Add interactive hover sound effect (visual only)
-  const allCards = document.querySelectorAll('.glass-card');
-  allCards.forEach(card => {
-    card.addEventListener('click', () => {
-      // subtle interaction
-      card.style.transition = '0.1s';
-      card.style.transform = 'scale(0.99)';
-      setTimeout(() => { card.style.transform = ''; }, 150);
-    });
-  });
-</script>
+    interface Feature {
+      icon: string;
+      title: string;
+      description: string;
+      gradient: string;
+    }
+
+    interface Timeline {
+      frame: string;
+      effect: string;
+      duration: string;
+    }
+
+    interface Project {
+      title: string;
+      type: string;
+      color: string;
+    }
+
+    // Main App Component
+    class App {
+      private container: HTMLElement | null;
+      
+      constructor() {
+        this.container = document.getElementById('app');
+        this.init();
+      }
+
+      private init(): void {
+        if (!this.container) return;
+        
+        this.container.innerHTML = `
+          ${Navbar.render()}
+          ${Hero.render()}
+          ${Features.render()}
+          ${TimelineEditor.render()}
+          ${Projects.render()}
+          ${Footer.render()}
+        `;
+        
+        this.initializeAnimations();
+        this.initializeIntersectionObserver();
+      }
+
+      private initializeAnimations(): void {
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute('href') || '');
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        });
+      }
+
+      private initializeIntersectionObserver(): void {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('opacity-100', 'translate-y-0');
+              entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+          observer.observe(el);
+        });
+      }
+    }
+
+    // Navbar Component
+    class Navbar {
+      static render(): string {
+        const navItems: NavItem[] = [
+          { label: 'Home', href: '#home', active: true },
+          { label: 'Editor', href: '#editor' },
+          { label: 'Features', href: '#features' },
+          { label: 'Projects', href: '#projects' },
+        ];
+
+        return `
+          <nav class="fixed top-0 w-full z-50 glass-effect">
+            <div class="max-w-7xl mx-auto px-6 py-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2 glitch-effect">
+                  <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg transform rotate-45"></div>
+                  <span class="text-2xl font-thin tracking-widest glow-text">
+                    ACTIVE <span class="text-blue-400">SUREPLUG</span>
+                  </span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                  ${navItems.map(item => `
+                    <a href="${item.href}" 
+                       class="text-sm uppercase tracking-widest hover:text-blue-400 transition-all duration-300 
+                              ${item.active ? 'text-blue-400' : 'text-gray-400'}"
+                       style="font-weight: 300;">
+                      ${item.label}
+                    </a>
+                  `).join('')}
+                </div>
+                <button class="glass-effect px-6 py-2 rounded-full text-sm uppercase tracking-widest hover:bg-blue-600 transition-all duration-300 neon-border"
+                        style="font-weight: 300;">
+                  START EDITING
+                </button>
+              </div>
+            </div>
+          </nav>
+        `;
+      }
+    }
+
+    // Hero Component
+    class Hero {
+      static render(): string {
+        return `
+          <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+            <div class="absolute inset-0">
+              <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl floating"></div>
+              <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-700/10 rounded-full blur-3xl floating" style="animation-delay: -3s;"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+              <div class="animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000">
+                <h1 class="text-8xl md:text-9xl font-thin tracking-tighter mb-8 glow-text" style="font-weight: 100;">
+                  <span class="block">ACTIVE</span>
+                  <span class="block text-blue-400">SUREPLUG</span>
+                </h1>
+                
+                <p class="text-2xl md:text-3xl font-extralight text-gray-400 mb-12 tracking-wide" style="font-weight: 200;">
+                  THE FUTURE OF <span class="text-blue-300">VIDEO EDITING</span>
+                </p>
+                
+                <div class="flex flex-col md:flex-row gap-6 justify-center">
+                  <button class="glass-effect px-12 py-4 rounded-full text-lg uppercase tracking-widest hover:bg-blue-600 transition-all duration-300 transform hover:scale-105 neon-border"
+                          style="font-weight: 300;">
+                    DOWNLOAD NOW
+                  </button>
+                  <button class="px-12 py-4 rounded-full text-lg uppercase tracking-widest border border-blue-500/30 hover:border-blue-500 transition-all duration-300"
+                          style="font-weight: 300;">
+                    WATCH DEMO
+                  </button>
+                </div>
+                
+                <div class="mt-20">
+                  <div class="glass-effect rounded-2xl p-8 neon-border">
+                    <div class="flex items-center justify-center space-x-4 text-sm text-gray-400">
+                      <span class="text-blue-400">4K</span>
+                      <span>•</span>
+                      <span class="text-blue-400">60FPS</span>
+                      <span>•</span>
+                      <span class="text-blue-400">HDR</span>
+                      <span>•</span>
+                      <span class="text-blue-400">AI-POWERED</span>
+                      <span>•</span>
+                      <span class="text-blue-400">CLOUD SYNC</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        `;
+      }
+    }
+
+    // Features Component
+    class Features {
+      static render(): string {
+        const features: Feature[] = [
+          {
+            icon: '◆',
+            title: 'AI MOTION TRACKING',
+            description: 'Advanced neural networks track subjects with pixel-perfect precision in real-time.',
+            gradient: 'from-blue-500 to-blue-600'
+          },
+          {
+            icon: '◇',
+            title: 'QUANTUM RENDERING',
+            description: 'Lightning-fast rendering engine processes 8K footage in milliseconds.',
+            gradient: 'from-blue-600 to-blue-700'
+          },
+          {
+            icon: '◈',
+            title: 'HOLOGRAPHIC TIMELINE',
+            description: '3D timeline visualization for intuitive editing workflow.',
+            gradient: 'from-blue-700 to-blue-800'
+          }
+        ];
+
+        return `
+          <section id="features" class="py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+              <h2 class="text-5xl font-thin text-center mb-20" style="font-weight: 100;">
+                NEXT GEN <span class="text-blue-400">FEATURES</span>
+              </h2>
+              
+              <div class="grid md:grid-cols-3 gap-12">
+                ${features.map((feature, index) => `
+                  <div class="animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000"
+                       style="transition-delay: ${index * 200}ms;">
+                    <div class="glass-effect rounded-2xl p-8 h-full hover:transform hover:scale-105 transition-all duration-300 neon-border group cursor-pointer">
+                      <div class="text-4xl text-blue-400 mb-6 group-hover:text-blue-300 transition-colors">${feature.icon}</div>
+                      <h3 class="text-xl font-light mb-4 tracking-wider">${feature.title}</h3>
+                      <p class="text-gray-400 font-light leading-relaxed">${feature.description}</p>
+                      
+                      <div class="mt-6 h-1 bg-gradient-to-r ${feature.gradient} rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </section>
+        `;
+      }
+    }
+
+    // Timeline Editor Component
+    class TimelineEditor {
+      static render(): string {
+        const timeline: Timeline[] = [
+          { frame: '00:00', effect: 'GLITCH', duration: '2.3s' },
+          { frame: '00:02', effect: 'NEON', duration: '1.8s' },
+          { frame: '00:04', effect: 'HOLO', duration: '3.1s' },
+          { frame: '00:07', effect: 'VOID', duration: '2.7s' },
+          { frame: '00:10', effect: 'FLUX', duration: '1.5s' },
+        ];
+
+        return `
+          <section id="editor" class="py-32 px-6 relative">
+            <div class="max-w-7xl mx-auto">
+              <h2 class="text-5xl font-thin text-center mb-20" style="font-weight: 100;">
+                FUTURISTIC <span class="text-blue-400">TIMELINE</span>
+              </h2>
+              
+              <div class="glass-effect rounded-2xl p-8 neon-border">
+                <div class="flex items-center justify-between mb-8">
+                  <div class="flex items-center space-x-4">
+                    <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                  </div>
+                  <span class="text-sm text-gray-400 tracking-widest">PROJECT: UNTITLED_01</span>
+                </div>
+                
+                <div class="relative">
+                  <div class="h-2 bg-gradient-to-r from-blue-900 to-blue-600 rounded-full mb-4"></div>
+                  
+                  <div class="flex justify-between mt-8">
+                    ${timeline.map((item, index) => `
+                      <div class="animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000"
+                           style="transition-delay: ${index * 100}ms;">
+                        <div class="timeline-dot w-4 h-4 rounded-full mx-auto mb-2"></div>
+                        <div class="text-xs text-gray-400 text-center font-light">${item.frame}</div>
+                        <div class="text-xs text-blue-400 text-center font-light">${item.effect}</div>
+                        <div class="text-xs text-gray-500 text-center font-light">${item.duration}</div>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+                
+                <div class="mt-12 flex justify-center space-x-4">
+                  <button class="glass-effect px-8 py-3 rounded-full text-sm uppercase tracking-widest hover:bg-blue-600 transition-all duration-300"
+                          style="font-weight: 300;">▶ PLAY</button>
+                  <button class="glass-effect px-8 py-3 rounded-full text-sm uppercase tracking-widest hover:bg-blue-600 transition-all duration-300"
+                          style="font-weight: 300;">■ STOP</button>
+                  <button class="glass-effect px-8 py-3 rounded-full text-sm uppercase tracking-widest hover:bg-blue-600 transition-all duration-300"
+                          style="font-weight: 300;">⏸ PAUSE</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        `;
+      }
+    }
+
+    // Projects Component
+    class Projects {
+      static render(): string {
+        const projects: Project[] = [
+          { title: 'NEON DREAMS', type: 'Music Video', color: 'blue' },
+          { title: 'VOID WALKER', type: 'Short Film', color: 'purple' },
+          { title: 'QUANTUM LEAP', type: 'Commercial', color: 'cyan' },
+        ];
+
+        return `
+          <section id="projects" class="py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+              <h2 class="text-5xl font-thin text-center mb-20" style="font-weight: 100;">
+                FEATURED <span class="text-blue-400">PROJECTS</span>
+              </h2>
+              
+              <div class="grid md:grid-cols-3 gap-8">
+                ${projects.map((project, index) => `
+                  <div class="animate-on-scroll opacity-0 translate-y-10 transition-all duration-1000 group cursor-pointer"
+                       style="transition-delay: ${index * 150}ms;">
+                    <div class="glass-effect rounded-2xl overflow-hidden neon-border hover:transform hover:scale-105 transition-all duration-500">
+                      <div class="h-48 bg-gradient-to-br from-${project.color}-900/50 to-${project.color}-700/30 flex items-center justify-center">
+                        <span class="text-6xl opacity-30">▶</span>
+                      </div>
+                      <div class="p-6">
+                        <h3 class="text-lg font-light tracking-wider mb-2">${project.title}</h3>
+                        <p class="text-sm text-gray-400 font-light">${project.type}</p>
+                        <div class="mt-4 flex justify-between items-center">
+                          <span class="text-xs text-blue-400">VIEW PROJECT →</span>
+                          <span class="text-xs text-gray-500">4K • HDR</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </section>
+        `;
+      }
+    }
+
+    // Footer Component
+    class Footer {
+      static render(): string {
+        return `
+          <footer class="border-t border-blue-500/10 py-12 px-6">
+            <div class="max-w-7xl mx-auto">
+              <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                  <div class="flex items-center space-x-2 mb-4">
+                    <div class="w-6 h-6 bg-gradient-to-r from-blue-500 to-blue-700 rounded transform rotate-45"></div>
+                    <span class="text-lg font-thin tracking-widest glow-text">
+                      ACTIVE <span class="text-blue-400">SUREPLUG</span>
+                    </span>
+                  </div>
+                  <p class="text-xs text-gray-500 font-light leading-relaxed">
+                    The future of video editing. Powered by quantum computing and artificial intelligence.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 class="text-sm font-light text-blue-400 mb-4 tracking-wider">PRODUCT</h4>
+                  <div class="space-y-2 text-xs text-gray-400 font-light">
+                    <p>Features</p>
+                    <p>Pricing</p>
+                    <p>Download</p>
+                    <p>Changelog</p>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-sm font-light text-blue-400 mb-4 tracking-wider">COMPANY</h4>
+                  <div class="space-y-2 text-xs text-gray-400 font-light">
+                    <p>About</p>
+                    <p>Blog</p>
+                    <p>Careers</p>
+                    <p>Contact</p>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 class="text-sm font-light text-blue-400 mb-4 tracking-wider">CONNECT</h4>
+                  <div class="space-y-2 text-xs text-gray-400 font-light">
+                    <p>Twitter</p>
+                    <p>Instagram</p>
+                    <p>YouTube</p>
+                    <p>Discord</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mt-12 pt-8 border-t border-blue-500/10 text-center">
+                <p class="text-xs text-gray-600 font-light tracking-wider">
+                  © 2025 ACTIVE SUREPLUG. POWERED BY QUANTUM TECHNOLOGY.
+                </p>
+              </div>
+            </div>
+          </footer>
+        `;
+      }
+    }
+
+    // Initialize the app
+    new App();
+  </script>
 </body>
 </html>
